@@ -48,5 +48,17 @@ class AddOnTemplateTest(BaseTemplateTest):
             [
                 self.project,
                 self.project + '/README.rst',
+                self.project + '/src',
+                self.project + '/src/brasil',
+                self.project + '/src/brasil/__init__.py',
+                self.project + '/src/brasil/gov',
+                self.project + '/src/brasil/gov/__init__.py',
+                self.project + '/src/brasil/gov/addon',
+                self.project + '/src/brasil/gov/addon/__init__.py',
+                self.project + '/src/brasil/gov/addon/profiles',
+                self.project + '/src/brasil/gov/addon/profiles/default',
+                self.project + '/src/brasil/gov/addon/profiles/default/metadata.xml',
+                self.project + '/src/brasil/gov/addon/tests',
+                self.project + '/src/brasil/gov/addon/tests/__init__.py',
             ]
         )
