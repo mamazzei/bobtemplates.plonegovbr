@@ -5,32 +5,16 @@ extends =
 
 package-name = {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}
 package-extras = [test]
-eggs +=
-    iw.debug
-    plone.reload
 
 parts +=
-    checkversions
     code-analysis
     i18ndude
-    node
     omelette
-
-[checkversions]
-recipe = zc.recipe.egg
-eggs = z3c.checkversions [buildout]
 
 [code-analysis]
 directory = ${buildout:directory}/src/{{{ package.namespace }}}/{{{ package.namespace2 }}}/{{{ package.name }}}
 pre-commit-hook = True
 flake8-ignore = E501
-flake8-max-complexity = 12
-csslint = True
-csslint-bin = ${buildout:directory}/bin/csslint
-debug-statements = True
-
-[instance]
-zcml += iw.debug
 
 [i18ndude]
 recipe = zc.recipe.egg
