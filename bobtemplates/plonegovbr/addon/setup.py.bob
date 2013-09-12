@@ -34,9 +34,7 @@ setup(name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.nam
       license='GPLv2',
       packages=find_packages('src'),
       package_dir={'': 'src'},
-      namespace_packages=['{{{ package.namespace }}}',
-                          '{{{ package.namespace2 }}}',
-                          '{{{ package.name }}}'],
+      namespace_packages=['{{{ package.namespace }}}', '{{{ package.namespace }}}.{{{ package.namespace2 }}}'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
