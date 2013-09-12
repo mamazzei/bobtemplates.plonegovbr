@@ -7,6 +7,6 @@ script:
   - bin/nosetests
   - bin/mrbob -O brasil.gov.addon --config test_answers.ini ./bobtemplates/plonegovbr/addon
   - cd brasil.gov.addon
-  - make
+  - make tests
 notifications:
   irc: irc.freenode.org#plonegovbr
