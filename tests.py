@@ -47,6 +47,8 @@ class AddOnTemplateTest(BaseTemplateTest):
             result.files_created.keys(),
             [
                 self.project,
+                self.project + '/CHANGES.rst',
+                self.project + '/CONTRIBUTORS.rst',
                 self.project + '/MANIFEST.in',
                 self.project + '/Makefile',
                 self.project + '/README.rst',
