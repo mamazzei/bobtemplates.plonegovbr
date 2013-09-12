@@ -1,9 +1,0 @@
-Contribuidores
------------------
-
-O ``{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.`` não seria possível sem a contribuição das
-seguintes pessoas:
-
-{{%- for credit in package.credits %}}
-- {{{ credit }}}
-{{%- endfor %}}
