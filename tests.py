@@ -60,5 +60,7 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/profiles/default/metadata.xml',
                 self.project + '/src/brasil/gov/addon/tests',
                 self.project + '/src/brasil/gov/addon/tests/__init__.py',
+                self.project + '/src/brasil/gov/addon/buildout.cfg',
+                self.project + '/src/brasil/gov/addon/setup.py',
             ]
         )
