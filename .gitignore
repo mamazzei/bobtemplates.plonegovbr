@@ -1,0 +1,5 @@
+.installed.cfg
+.python-version
+bin/
+bobtemplates.plonegovbr.egg-info/
+develop-eggs/
