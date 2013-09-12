@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+
+from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces import IExample
+from plone.dexterity.content import Container
+
+
+class Example(Container):
+    '''Exemplo de tipo de conteúdo
+    '''
+
+    grok.implements(IExample)
