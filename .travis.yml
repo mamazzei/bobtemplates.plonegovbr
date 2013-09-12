@@ -1,0 +1,12 @@
+language: python
+python: 2.7
+install:
+  - python bootstrap.py
+  - bin/buildout
+script:
+  - bin/nosetests
+  - bin/mrbob -O brasil.gov.addon --config test_answers.ini ./bobtemplates/plonegovbr/addon
+  - cd brasil.gov.addon
+  - make
+notifications:
+  irc: irc.freenode.org#plonegovbr
