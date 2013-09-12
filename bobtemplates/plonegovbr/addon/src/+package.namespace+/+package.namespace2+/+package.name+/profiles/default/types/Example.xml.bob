@@ -1,21 +1,19 @@
 <?xml version="1.0"?>
 <object name="Example" meta_type="Dexterity FTI"
-   xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-   i18n:domain="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}">
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}">
 
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Example</property>
- <property name="description" i18n:translate="">Um tipo de conteudo de exemplo</property>
+ <property name="title" i18n:translate="">Exemplo</property>
+ <property name="description" i18n:translate="">Exemplo de tipo de conteudo</property>
  <property name="content_icon">++resource++{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}/example_icon.png</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types"></property>
 
- <!-- schema interface -->
+ <!-- schema interface and class used for content items -->
  <property name="schema">{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces.IExample</property>
-
- <!-- class used for content items -->
  <property name="klass">{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.content.example.Example</property>
 
  <!-- add permission -->
@@ -24,8 +22,8 @@
  <!-- enabled behaviors -->
  <property name="behaviors">
   <element value="plone.app.content.interfaces.INameFromTitle" />
-  <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
   <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
+  <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
  </property>
 
  <!-- View information -->
