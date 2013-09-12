@@ -24,7 +24,7 @@ docs/html/index.html: docs/*.rst src/{{{ package.namespace }}}.{{{ package.names
 bin/sphinx-build: .installed.cfg
 	@touch $@
 
-.installed.cfg: bin/buildout buildout.cfg buildout.d/*.cfg setup.py
+.installed.cfg: bin/buildout buildout.cfg setup.py
 	bin/buildout $(options)
 
 bin/buildout: bin/python buildout.cfg bootstrap.py
@@ -37,11 +37,7 @@ bin/python:
 
 tests: .installed.cfg
 	@bin/test
-	@bin/flake8 setup.py
-	@bin/flake8 src/{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}
-	@for pt in `find src/{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} -name "*.pt"` ; do bin/zptlint $$pt; done
-	@for xml in `find src/{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} -name "*.xml"` ; do bin/zptlint $$xml; done
-	@for zcml in `find src/{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} -name "*.zcml"` ; do bin/zptlint $$zcml; done
+	@bin/code-analysis
 
 clean:
 	@rm -rf .coverage .installed.cfg .mr.developer.cfg bin docs/html htmlcov parts develop-eggs \
