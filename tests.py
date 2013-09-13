@@ -88,6 +88,7 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/tests/robot/example.robot',
                 self.project + '/src/brasil/gov/addon/tests/robot/keywords.robot',
                 self.project + '/src/brasil/gov/addon/tests/robot/variables.py',
+                self.project + '/src/brasil/gov/addon/tests/test_content.py',
                 self.project + '/src/brasil/gov/addon/tests/test_robot.py',
                 self.project + '/src/brasil/gov/addon/tests/test_setup.py',
                 self.project + '/src/brasil/gov/addon/upgrades',
