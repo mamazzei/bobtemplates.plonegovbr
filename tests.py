@@ -27,7 +27,7 @@ class BaseTemplateTest(unittest.TestCase):
         }
         return self.env.run(
             '%(dir)s/bin/mrbob -O %(project)s --config '
-            '%(dir)s/test_answers.ini %(dir)s/bobtemplates/plonegovbr/%(template)s'
+            '%(dir)s/test_answers_%(template)s.ini %(dir)s/bobtemplates/plonegovbr/%(template)s'
             % options)
 
 
@@ -83,6 +83,7 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/tests',
                 self.project + '/src/brasil/gov/addon/tests/__init__.py',
                 self.project + '/src/brasil/gov/addon/tests/test_browserlayer.py',
+                self.project + '/src/brasil/gov/addon/tests/test_content.py',
                 self.project + '/src/brasil/gov/addon/tests/test_setup.py',
                 self.project + '/src/brasil/gov/addon/upgrades',
                 self.project + '/src/brasil/gov/addon/upgrades/__init__.py',
