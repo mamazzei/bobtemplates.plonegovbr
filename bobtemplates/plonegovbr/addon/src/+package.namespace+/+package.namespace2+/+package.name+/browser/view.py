@@ -5,6 +5,10 @@ from five import grok
 
 grok.templatedir('templates')
 
-class HelloWorld (IExample):
-    ''' Browserview
+
+class HelloWorld (grok.view):
+    ''' Browserview de exemplo Hello World
     '''
+
+    grok.context(IExample)
+
