@@ -2,6 +2,6 @@
 <layers>
  <layer
      name="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}"
-     interface="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces.IBrowserLayerInstalada"
+     interface="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces.IBrowserLayer"
      />
 </layers>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.config import PROJECTNAME
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import INTEGRATION_TESTING
-from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces import IBrowserLayerInstalada
+from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces import IBrowserLayer
 from plone.browserlayer.utils import registered_layers
 from zope.site.hooks import setSite
 
@@ -21,9 +21,9 @@ class TestBrowserLayer(unittest.TestCase):
         self.qi = getattr(self.portal, 'portal_quickinstaller')
 
     def test_installed(self):
-        self.assertTrue(IBrowserLayerInstalada in registered_layers())
+        self.assertTrue(IBrowserLayer in registered_layers())
 
     def test_uninstalled(self):
         self.qi.uninstallProducts(products=[PROJECTNAME])
-        self.assertTrue(IBrowserLayerInstalada not in registered_layers())
+        self.assertTrue(IBrowserLayer not in registered_layers())
 
