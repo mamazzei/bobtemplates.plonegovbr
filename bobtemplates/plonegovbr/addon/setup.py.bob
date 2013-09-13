@@ -11,44 +11,47 @@ long_description = (
     open('CHANGES.rst').read()
 )
 
-setup(name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}',
-      version=version,
-      description=description,
-      long_description=long_description,
-      classifiers=[
-          'Development Status :: 3 - Alpha',
-          'Environment :: Web Environment',
-          'Framework :: Plone',
-          'Framework :: Plone :: 4.3',
-          'Intended Audience :: System Administrators',
-          'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
-          'Operating System :: OS Independent',
-          'Programming Language :: Python',
-          'Programming Language :: Python :: 2.7',
-          'Topic :: Software Development :: Libraries :: Python Modules',
-      ],
-      keywords='FIXME',
-      author='FIXME',
-      author_email='FIXME',
-      url='https://github.com/plonegovbr/{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}',
-      license='GPLv2',
-      packages=find_packages('src'),
-      package_dir={'': 'src'},
-      namespace_packages=['{{{ package.namespace }}}', '{{{ package.namespace }}}.{{{ package.namespace2 }}}'],
-      include_package_data=True,
-      zip_safe=False,
-      install_requires=[
-          'plone.app.dexterity [grok]',
-          'setuptools',
-      ],
-      extras_require={
-          'test': [
-              'plone.app.testing',
+setup(
+    name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}',
+    version=version,
+    description=description,
+    long_description=long_description,
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Environment :: Web Environment',
+        'Framework :: Plone',
+        'Framework :: Plone :: 4.3',
+        'Intended Audience :: System Administrators',
+        'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.7',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+    ],
+    keywords='FIXME',
+    author='FIXME',
+    author_email='FIXME',
+    url='https://github.com/plonegovbr/{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}',
+    license='GPLv2',
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
+    namespace_packages=['{{{ package.namespace }}}',
+                        '{{{ package.namespace }}}.{{{ package.namespace2 }}}'],
+    include_package_data=True,
+    zip_safe=False,
+    install_requires=[
+        'plone.app.dexterity [grok]',
+        'plone.app.referenceablebehavior',
+        'setuptools',
+    ],
+    extras_require={
+        'test': [
+            'plone.app.testing',
               'plone.app.robotframework',
-          ],
-      },
-      entry_points='''
+        ],
+    },
+    entry_points='''
       [z3c.autoinclude.plugin]
       target = plone
       ''',
-      )
+)
