@@ -11,22 +11,22 @@ Suite Teardown  Close Browser
 
 *** Test cases ***
 
-#Test CRUD
-#    Create Cover  Title  Description  Empty layout
-#    Update  Title fixed  Description fixed
-#    Delete
-#
-#Test renderBase
-#    Goto Homepage
-#    Create Cover  Title  Description  Empty layout
-#    ${BASE}  Get Element Attribute  tag=base@href
-#    Should Be Equal  ${BASE}  ${PLONE_URL}/title-1/
-#    Click Link  link=Compose
-#    ${BASE}  Get Element Attribute  tag=base@href
-#    Should Be Equal  ${BASE}  ${PLONE_URL}/title-1/
-#    Click Link  link=Layout
-#    ${BASE}  Get Element Attribute  tag=base@href
-#    Should Be Equal  ${BASE}  ${PLONE_URL}/title-1/
+Test CRUD
+    Create Example  Title  Description  Empty layout
+    Update  Title fixed  Description fixed
+    Delete
+
+Test renderBase
+    Goto Homepage
+    Create Example  Title  Description  Empty layout
+    ${BASE}  Get Element Attribute  tag=base@href
+    Should Be Equal  ${BASE}  ${PLONE_URL}/title-1/
+    Click Link  link=Compose
+    ${BASE}  Get Element Attribute  tag=base@href
+    Should Be Equal  ${BASE}  ${PLONE_URL}/title-1/
+    Click Link  link=Layout
+    ${BASE}  Get Element Attribute  tag=base@href
+    Should Be Equal  ${BASE}  ${PLONE_URL}/title-1/
 
 *** Keywords ***
 
@@ -60,4 +60,3 @@ Suite Teardown  Close Browser
 #    Click Link  css=a#plone-contentmenu-actions-delete
 #    Click Button  Delete
 #    Page Should Contain  Plone site
-
