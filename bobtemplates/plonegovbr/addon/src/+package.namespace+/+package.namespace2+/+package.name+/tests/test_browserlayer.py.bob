@@ -26,3 +26,4 @@ class TestBrowserLayer(unittest.TestCase):
     def test_uninstalled(self):
         self.qi.uninstallProducts(products=[PROJECTNAME])
         self.assertTrue(IBrowserLayerInstalada not in registered_layers())
+

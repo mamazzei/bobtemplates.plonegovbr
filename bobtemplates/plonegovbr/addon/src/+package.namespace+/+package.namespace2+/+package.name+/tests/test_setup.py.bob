@@ -70,3 +70,4 @@ class TestUninstall(BaseTestCase):
 
     def test_uninstalled(self):
         self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))
+
