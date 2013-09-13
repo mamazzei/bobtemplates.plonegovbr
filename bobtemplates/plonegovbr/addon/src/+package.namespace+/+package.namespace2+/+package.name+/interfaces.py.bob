@@ -14,3 +14,4 @@ class IExample(form.Schema):
         title=_(u'Body text'),
         required=False,
     )
+

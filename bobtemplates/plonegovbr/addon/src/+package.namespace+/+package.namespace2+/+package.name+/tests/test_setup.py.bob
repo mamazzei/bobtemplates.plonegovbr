@@ -6,7 +6,6 @@ from plone.app.testing import login
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
-from plone.browserlayer.utils import registered_layers
 from Products.GenericSetup.upgrade import listUpgradeSteps
 from zope.site.hooks import setSite
 
@@ -75,3 +74,4 @@ class TestUninstall(BaseTestCase):
 
     def test_uninstalled(self):
         self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))
+

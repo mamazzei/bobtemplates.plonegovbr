@@ -30,3 +30,4 @@ INTEGRATION_TESTING = IntegrationTesting(
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE,),
     name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:Functional')
+
