@@ -13,3 +13,4 @@ class HiddenProfiles(object):
             u'{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:uninstall',
             u'{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.upgrades.v2000:default'
         ]
+

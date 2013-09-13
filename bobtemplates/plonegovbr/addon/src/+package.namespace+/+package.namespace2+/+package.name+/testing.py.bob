@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
@@ -15,7 +16,8 @@ class Fixture(PloneSandboxLayer):
         self.loadZCML(package={{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}})
 
     def setUpPloneSite(self, portal):
-        self.applyProfile(portal, '{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:default')
+        self.applyProfile(
+            portal, '{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:default')
 
 
 FIXTURE = Fixture()
@@ -28,3 +30,4 @@ INTEGRATION_TESTING = IntegrationTesting(
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE,),
     name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:Functional')
+

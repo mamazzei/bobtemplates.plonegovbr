@@ -2,7 +2,7 @@
 # use `make options=-v` to run buildout with extra options
 
 python = python2.7
-options =
+options = -c travis.cfg
 
 all: docs tests
 
@@ -25,6 +25,7 @@ bin/sphinx-build: .installed.cfg
 	@touch $@
 
 .installed.cfg: bin/buildout buildout.cfg setup.py
+	@mkdir -p buildout-cache/downloads
 	bin/buildout $(options)
 
 bin/buildout: bin/python buildout.cfg bootstrap.py
