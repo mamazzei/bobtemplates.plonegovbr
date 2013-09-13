@@ -1,12 +1,15 @@
 language: python
 python: 2.7
+env:
+  - TEMPLATE=addon
+  - TEMPLATE=tema
 install:
   - python bootstrap.py
   - bin/buildout
 script:
   - bin/nosetests
-  - bin/mrbob -O brasil.gov.addon --config test_answers.ini ./bobtemplates/plonegovbr/addon
-  - cd brasil.gov.addon
+  - bin/mrbob -O brasil.gov.$TEMPLATE --config test_answers_$TEMPLATE.ini ./bobtemplates/plonegovbr/$TEMPLATE
+  - cd brasil.gov.$TEMPLATE
   - make tests
 notifications:
   irc: irc.freenode.org#plonegovbr

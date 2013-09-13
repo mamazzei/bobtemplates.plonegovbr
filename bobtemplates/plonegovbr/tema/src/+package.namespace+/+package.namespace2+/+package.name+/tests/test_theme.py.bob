@@ -1,0 +1,79 @@
+# -*- coding: utf-8 -*-
+from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.config import PROJECTNAME
+from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import INTEGRATION_TESTING
+from plone.app.testing import login
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import TEST_USER_NAME
+from plone.app.theming.interfaces import IThemeSettings
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
+
+import unittest2 as unittest
+
+JS = [
+    '++theme++{{{ tema.id }}}/js/menu.js'
+]
+
+CSS = [
+    '++theme++{{{ tema.id }}}/css/plone.css',
+    '++theme++{{{ tema.id }}}/css/style.css'
+]
+
+
+class BaseTestCase(unittest.TestCase):
+    """base test case to be used by other tests"""
+
+    layer = INTEGRATION_TESTING
+
+    def setUpUser(self):
+        setRoles(self.portal, TEST_USER_ID, ['Manager', 'Editor', 'Reviewer'])
+        login(self.portal, TEST_USER_NAME)
+
+    def setUp(self):
+        portal = self.layer['portal']
+        self.portal = portal
+        self.qi = getattr(self.portal, 'portal_quickinstaller')
+        self.pp = getattr(self.portal, 'portal_properties')
+        self.wt = getattr(self.portal, 'portal_workflow')
+        self.st = getattr(self.portal, 'portal_setup')
+        self.setUpUser()
+
+
+class TestInstall(BaseTestCase):
+    """ensure product is properly installed"""
+
+    def test_javascript_registry(self):
+        portal_javascripts = self.portal.portal_javascripts
+        for js in JS:
+            self.assertTrue(js in portal_javascripts.getResourceIds())
+
+    def test_css_registry(self):
+        portal_css = self.portal.portal_css
+        for css in CSS:
+            self.assertTrue(css in portal_css.getResourceIds())
+
+    def test_theme_enabled(self):
+        settings = getUtility(IRegistry).forInterface(IThemeSettings, False)
+        self.assertEqual(settings.enabled, True)
+        self.assertEqual(settings.currentTheme,
+                         '{{{ tema.id }}}')
+
+
+class TestUninstall(BaseTestCase):
+    """ensure product is properly uninstalled"""
+
+    def setUp(self):
+        BaseTestCase.setUp(self)
+        self.qi.uninstallProducts(products=[PROJECTNAME])
+
+    def test_javascript_registry_removed(self):
+        portal_javascripts = self.portal.portal_javascripts
+        for js in JS:
+            self.assertFalse(js in portal_javascripts.getResourceIds())
+
+    def test_css_registry_removed(self):
+        portal_css = self.portal.portal_css
+        for css in CSS:
+            self.assertFalse(css in portal_css.getResourceIds())
+

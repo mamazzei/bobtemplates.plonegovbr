@@ -1,0 +1,11 @@
+[theme]
+title = {{{ tema.name }}}
+description = {{{ tema.name }}}
+author = PloneGov.BR
+author_email = gov@plone.org.br
+doctype = <!DOCTYPE html>
+preview = preview.png
+
+[theme:parameters]
+ajax_load = python: 'ajax_load' in request.form
+portal_url = python: portal_state.portal_url()
