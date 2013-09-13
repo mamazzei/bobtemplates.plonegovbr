@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} import _
 from plone.app.textfield import RichText
 from plone.directives import form
 
