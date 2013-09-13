@@ -13,8 +13,7 @@ import unittest2 as unittest
 
 
 class BaseTestCase(unittest.TestCase):
-
-    '''base test case to be used by other tests'''
+    """Base test case to be used by other tests."""
 
     layer = INTEGRATION_TESTING
 
@@ -35,8 +34,7 @@ class BaseTestCase(unittest.TestCase):
 
 
 class TestInstall(BaseTestCase):
-
-    '''ensure product is properly installed'''
+    """Ensure product is properly installed."""
 
     def test_installed(self):
         self.assertTrue(self.qi.isProductInstalled(PROJECTNAME),
@@ -50,8 +48,7 @@ class TestInstall(BaseTestCase):
 
 
 class TestUpgrade(BaseTestCase):
-
-    '''ensure product upgrades work'''
+    """Ensure product upgrades work."""
 
     def test_to2000_available(self):
 
@@ -65,8 +62,7 @@ class TestUpgrade(BaseTestCase):
 
 
 class TestUninstall(BaseTestCase):
-
-    '''ensure product is properly uninstalled'''
+    """Ensure product is properly uninstalled."""
 
     def setUp(self):
         BaseTestCase.setUp(self)
