@@ -6,6 +6,7 @@ from plone.directives import form
 
 
 class IExample(form.Schema):
+
     '''Exemplo de schema para um tipo de conteúdo
     '''
 

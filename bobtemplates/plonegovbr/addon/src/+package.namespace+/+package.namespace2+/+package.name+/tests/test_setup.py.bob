@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.config import PROJECTNAME
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import INTEGRATION_TESTING
 from plone.app.testing import login
@@ -13,7 +14,8 @@ import unittest2 as unittest
 
 
 class BaseTestCase(unittest.TestCase):
-    """base test case to be used by other tests"""
+
+    '''base test case to be used by other tests'''
 
     layer = INTEGRATION_TESTING
 
@@ -34,7 +36,8 @@ class BaseTestCase(unittest.TestCase):
 
 
 class TestInstall(BaseTestCase):
-    """ensure product is properly installed"""
+
+    '''ensure product is properly installed'''
 
     def test_installed(self):
         self.assertTrue(self.qi.isProductInstalled(PROJECTNAME),
@@ -48,7 +51,8 @@ class TestInstall(BaseTestCase):
 
 
 class TestUpgrade(BaseTestCase):
-    """ensure product upgrades work"""
+
+    '''ensure product upgrades work'''
 
     @unittest.skip(u'@ericof fault')
     def test_to2000_available(self):
@@ -63,7 +67,8 @@ class TestUpgrade(BaseTestCase):
 
 
 class TestUninstall(BaseTestCase):
-    """ensure product is properly uninstalled"""
+
+    '''ensure product is properly uninstalled'''
 
     def setUp(self):
         BaseTestCase.setUp(self)
