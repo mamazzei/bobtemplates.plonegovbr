@@ -44,3 +44,5 @@ ACCEPTANCE_TESTING = FunctionalTesting(
            z2.ZSERVER_FIXTURE),
     name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:Acceptance',
 )
+
+

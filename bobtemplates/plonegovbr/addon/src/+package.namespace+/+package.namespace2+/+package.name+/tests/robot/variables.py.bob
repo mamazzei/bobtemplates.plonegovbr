@@ -25,3 +25,4 @@ DESIRED_CAPABILITIES = os.environ.get('DESIRED_CAPABILITIES', "")
 TEST_FOLDER = os.environ.get('TEST_FOLDER', "%s/test-folder" % PLONE_URL)
 FF_PROFILE = os.path.join(os.path.dirname(tests.__file__),
                           'robot/ff_profile')
+
