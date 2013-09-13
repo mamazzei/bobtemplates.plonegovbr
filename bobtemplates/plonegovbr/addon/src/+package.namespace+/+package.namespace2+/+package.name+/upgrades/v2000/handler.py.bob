@@ -6,7 +6,7 @@ import logging
 
 
 def apply_profile(context):
-    ''' Atualiza perfil para versao 2000 '''
+    """Atualiza perfil para versao 2000."""
     logger = logging.getLogger(PROJECTNAME)
     profile = 'profile-{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.upgrades.v2000:default'
     loadMigrationProfile(context, profile)
