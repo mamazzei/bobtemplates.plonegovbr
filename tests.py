@@ -1,7 +1,7 @@
-import unittest2 as unittest
 import os
-import tempfile
 import shutil
+import tempfile
+import unittest
 
 from scripttest import TestFileEnvironment
 
@@ -42,6 +42,7 @@ class AddOnTemplateTest(BaseTemplateTest):
         Generate a project from a template, test which files were created
         and run all tests in the generated package.
         """
+        self.maxDiff = None
         result = self.create_template()
         self.assertItemsEqual(
             result.files_created.keys(),
@@ -63,12 +64,6 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/__init__.py',
                 self.project + '/src/brasil/gov/addon',
                 self.project + '/src/brasil/gov/addon/__init__.py',
-                self.project + '/src/brasil/gov/addon/browser',
-                self.project + '/src/brasil/gov/addon/browser/__init__.py',
-                self.project + '/src/brasil/gov/addon/browser/configure.zcml',
-                self.project + '/src/brasil/gov/addon/browser/static',
-                self.project + '/src/brasil/gov/addon/browser/static/.gitkeep',
-                self.project + '/src/brasil/gov/addon/browser/static/document_icon.png',
                 self.project + '/src/brasil/gov/addon/config.py',
                 self.project + '/src/brasil/gov/addon/configure.zcml',
                 self.project + '/src/brasil/gov/addon/content',
@@ -86,6 +81,8 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/profiles/default/types/Example.xml',
                 self.project + '/src/brasil/gov/addon/profiles/uninstall',
                 self.project + '/src/brasil/gov/addon/profiles/uninstall/brasil.gov.addon.txt',
+                self.project + '/src/brasil/gov/addon/static',
+                self.project + '/src/brasil/gov/addon/static/document_icon.png',
                 self.project + '/src/brasil/gov/addon/testing.py',
                 self.project + '/src/brasil/gov/addon/tests',
                 self.project + '/src/brasil/gov/addon/tests/__init__.py',
