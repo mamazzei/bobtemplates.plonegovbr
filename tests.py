@@ -65,6 +65,7 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/__init__.py',
                 self.project + '/src/brasil/gov/addon/browser',
                 self.project + '/src/brasil/gov/addon/browser/__init__.py',
+                self.project + '/src/brasil/gov/addon/browser/configure.zcml.bob',
                 self.project + '/src/brasil/gov/addon/browser/view.py',
                 self.project + '/src/brasil/gov/addon/browser/templates',
                 self.project + '/src/brasil/gov/addon/browser/templates/helloworld.pt',
