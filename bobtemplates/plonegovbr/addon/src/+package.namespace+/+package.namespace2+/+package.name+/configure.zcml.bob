@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}">
 
@@ -12,6 +13,12 @@
 
     <!-- Suporte ao Generic Setup-->
     <include file="profiles.zcml" />
+
+    <!-- Publish static files -->
+    <browser:resourceDirectory
+      name="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}"
+      directory="static"
+      />
 
 </configure>
 

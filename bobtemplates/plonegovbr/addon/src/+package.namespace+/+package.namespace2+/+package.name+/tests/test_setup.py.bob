@@ -7,38 +7,20 @@ from plone.app.testing import login
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
-from plone.browserlayer.utils import registered_layers
 from plone.testing.z2 import Browser
 from Products.GenericSetup.upgrade import listUpgradeSteps
 from zope.site.hooks import setSite
 
 import unittest2 as unittest
-import pkg_resources
 
-PLONE_VERSION = pkg_resources.require("Plone")[0].version
 
 class Plone43TestCase(unittest.TestCase):
 
     layer = FUNCTIONAL_TESTING
 
-    @unittest.skipUnless('4.3' in PLONE_VERSION, "Plone 4.3 specific")
-    def test_static_resource_grokker(self):
-        """Grok does not register automatically the static resources anymore
-        see: http://svn.zope.org/five.grok/trunk/src/five/grok/meta.py?rev=123298&r1=112163&r2=123298
-        """
-        portal = self.layer['portal']
-        app = self.layer['app']
-
-        browser = Browser(app)
-        portal_url = portal.absolute_url()
-
-        browser.open('%s/{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}' % portal_url)
-        self.assertEqual(browser.headers['status'], '200 Ok')
-
 
 class BaseTestCase(unittest.TestCase):
-
-    '''base test case to be used by other tests'''
+    """Base test case to be used by other tests."""
 
     layer = INTEGRATION_TESTING
 
@@ -59,8 +41,7 @@ class BaseTestCase(unittest.TestCase):
 
 
 class TestInstall(BaseTestCase):
-
-    '''ensure product is properly installed'''
+    """Ensure product is properly installed."""
 
     def test_installed(self):
         self.assertTrue(self.qi.isProductInstalled(PROJECTNAME),
@@ -72,10 +53,22 @@ class TestInstall(BaseTestCase):
             (u'1000',)
         )
 
+    def test_static_resource_grokker(self):
+        """Grok does not register automatically the static resources anymore
+        see: http://svn.zope.org/five.grok/trunk/src/five/grok/meta.py?rev=123298&r1=112163&r2=123298
+        """
+        portal = self.layer['portal']
+        app = self.layer['app']
+
+        browser = Browser(app)
+        portal_url = portal.absolute_url()
+
+        browser.open('%s/++resource++{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}' % portal_url)
+        self.assertEqual(browser.headers['status'], '200 Ok')
+
 
 class TestUpgrade(BaseTestCase):
-
-    '''ensure product upgrades work'''
+    """Ensure product upgrades work."""
 
     def test_to2000_available(self):
 
@@ -89,8 +82,7 @@ class TestUpgrade(BaseTestCase):
 
 
 class TestUninstall(BaseTestCase):
-
-    '''ensure product is properly uninstalled'''
+    """Ensure product is properly uninstalled."""
 
     def setUp(self):
         BaseTestCase.setUp(self)
