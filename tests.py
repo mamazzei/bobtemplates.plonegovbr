@@ -95,15 +95,12 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/upgrades/v2000/handler.py',
                 self.project + '/src/brasil/gov/addon/upgrades/v2000/profile',
                 self.project + '/src/brasil/gov/addon/upgrades/v2000/profile/metadata.xml',
-<<<<<<< HEAD
                 self.project + '/src/brasil/gov/addon/browser',
                 self.project + '/src/brasil/gov/addon/browser/__init__.py',
                 self.project + '/src/brasil/gov/addon/browser/configure.zcml',
                 self.project + '/src/brasil/gov/addon/browser/static',
                 self.project + '/src/brasil/gov/addon/browser/static/.gitkeep',
                 self.project + '/src/brasil/gov/addon/browser/static/document_icon.png',
-=======
                 self.project + '/travis.cfg',
->>>>>>> 69631cc65848ad7b831f4566adbb2ad21011de20
             ]
         )

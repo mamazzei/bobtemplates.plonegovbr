@@ -4,3 +4,5 @@ bin/
 bobtemplates.plonegovbr.egg-info/
 develop-eggs/
 *.pyc
+parts/
+brasil.gov.addon/
