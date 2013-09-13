@@ -11,3 +11,4 @@ def apply_profile(context):
     profile = 'profile-{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.upgrades.v2000:default'
     loadMigrationProfile(context, profile)
     logger.info('Atualizado para versao 2000')
+
