@@ -5,7 +5,6 @@ from plone.app.testing import login
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
-from plone.browserlayer.utils import registered_layers
 from Products.GenericSetup.upgrade import listUpgradeSteps
 from zope.site.hooks import setSite
 
@@ -50,15 +49,14 @@ class TestInstall(BaseTestCase):
 class TestUpgrade(BaseTestCase):
     """ensure product upgrades work"""
 
-    @unittest.skip(u'@ericof fault')
     def test_to2000_available(self):
 
         upgradeSteps = listUpgradeSteps(self.st,
                                         self.profile,
                                         '1000')
         step = [step for step in upgradeSteps
-                if (step['dest'] == ('2000',))
-                and (step['source'] == ('1000', '0'))]
+                if (step[0]['dest'] == ('2000',))
+                and (step[0]['source'] == ('1000',))]
         self.assertEquals(len(step), 1)
 
 
@@ -71,3 +69,4 @@ class TestUninstall(BaseTestCase):
 
     def test_uninstalled(self):
         self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))
+
