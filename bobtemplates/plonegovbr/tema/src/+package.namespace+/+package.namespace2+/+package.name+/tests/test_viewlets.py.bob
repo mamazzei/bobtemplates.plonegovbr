@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.config import PROJECTNAME
+from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import INTEGRATION_TESTING
+from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces import IBrowserLayer
+from plone.app.testing import login
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import TEST_USER_NAME
+from zope.component import getMultiAdapter
+from zope.interface import alsoProvides
+from Products.Five.browser import BrowserView as View
+from plone.app.layout.viewlets.interfaces import IAboveContent
+
+import unittest2 as unittest
+
+
+class PathBarViewletTestCase(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        self.request = self.layer['request']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+
+    def manager(self):
+        view = View(self.portal, self.request)
+        manager = getMultiAdapter((self.portal, self.portal.REQUEST, view),
+                                  IAboveContent,
+                                  name='plone.abovecontent')
+        manager.update()
+        return manager
+
+    def test_available(self):
+        alsoProvides(self.portal.REQUEST, IBrowserLayer)
+        manager = self.manager()
+        viewlets = [v for v in manager.viewlets if v.__name__ == 'plone.path_bar']
+        viewlet = viewlets[0] if viewlets else None
+        html = viewlet.render()
+        self.assertIn('<!-- Exemplo de customizacao -->', html)
+        
+
+    def test_not_available(self):
+        manager = self.manager()
+        viewlets = [v for v in manager.viewlets if v.__name__ == 'plone.path_bar']
+        viewlet = viewlets[0] if viewlets else None
+        html = viewlet.render()
+        self.assertNotIn('<!-- Exemplo de customizacao -->', html)
