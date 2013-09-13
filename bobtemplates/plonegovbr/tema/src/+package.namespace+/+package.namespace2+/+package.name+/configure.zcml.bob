@@ -6,6 +6,9 @@
 
     <includeDependencies package="." />
 
+    <!-- Inclui pacote browser -->
+    <include package=".browser" />
+
     <!-- Suporte ao Generic Setup-->
     <include file="profiles.zcml" />
 
@@ -14,6 +17,8 @@
         directory="themes/{{{ tema.id }}}"
         type="theme"
         name="{{{ tema.id }}}"/>
+
+    <include package="five.grok" />
 
 </configure>
 
