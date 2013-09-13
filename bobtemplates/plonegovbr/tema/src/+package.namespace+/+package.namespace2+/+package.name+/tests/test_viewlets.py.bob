@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
-from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.config import PROJECTNAME
+
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import INTEGRATION_TESTING
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces import IBrowserLayer
-from plone.app.testing import login
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from plone.app.testing import TEST_USER_NAME
 from zope.component import getMultiAdapter
 from zope.interface import alsoProvides
 from Products.Five.browser import BrowserView as View
@@ -38,7 +36,6 @@ class PathBarViewletTestCase(unittest.TestCase):
         viewlet = viewlets[0] if viewlets else None
         html = viewlet.render()
         self.assertIn('<!-- Exemplo de customizacao -->', html)
-        
 
     def test_not_available(self):
         manager = self.manager()
@@ -46,3 +43,4 @@ class PathBarViewletTestCase(unittest.TestCase):
         viewlet = viewlets[0] if viewlets else None
         html = viewlet.render()
         self.assertNotIn('<!-- Exemplo de customizacao -->', html)
+
