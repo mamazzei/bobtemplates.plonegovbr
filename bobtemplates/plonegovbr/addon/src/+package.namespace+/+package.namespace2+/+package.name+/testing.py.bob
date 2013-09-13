@@ -24,7 +24,6 @@ class Fixture(PloneSandboxLayer):
 
 FIXTURE = Fixture()
 
-
 INTEGRATION_TESTING = IntegrationTesting(
     bases=(FIXTURE,),
     name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:Integration')
@@ -33,18 +32,8 @@ FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE,),
     name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:Functional')
 
-
-class AcceptanceFixture(FunctionalTesting):
-    pass
-
-
-ACCEPTANCE_FIXTURE = AcceptanceFixture()
-
-ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(AUTOLOGIN_LIBRARY_FIXTURE,
-           ACCEPTANCE_FIXTURE,
-           z2.ZSERVER_FIXTURE),
-    name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:Acceptance',
+ROBOT_TESTING = FunctionalTesting(
+    bases=(FIXTURE, AUTOLOGIN_LIBRARY_FIXTURE, z2.ZSERVER_FIXTURE),
+    name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:Robot',
 )
-
 
