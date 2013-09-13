@@ -19,11 +19,11 @@
     <!-- Suporte ao Generic Setup-->
     <include file="profiles.zcml" />
 
-    <!-- Render the Browserview Hello World -->
+    <!-- Render the Browserview "Hello World" -->
     <browser:page
         for="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces.IExample"
         name="helloworld"
-        class=".browser.HelloWorld"
+        class=".browser.view.HelloWorld"
         permission="zope2.View"
         />
 
