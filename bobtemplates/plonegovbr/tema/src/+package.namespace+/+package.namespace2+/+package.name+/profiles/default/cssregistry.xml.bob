@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_css">
+    <stylesheet authenticated="False"
+                expression=""
+                id="++theme++{{{ tema.id }}}/css/plone.css" />
+    <stylesheet authenticated="False"
+                expression=""
+                id="++theme++{{{ tema.id }}}/css/style.css" />
+</object>
