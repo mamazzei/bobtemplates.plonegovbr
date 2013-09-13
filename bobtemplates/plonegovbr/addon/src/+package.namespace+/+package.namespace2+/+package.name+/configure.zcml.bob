@@ -13,7 +13,7 @@
     <!-- Suporte ao Generic Setup-->
     <include file="profiles.zcml" />
 
-    <include package="browser" />
+    <include package=".browser" />
 
 </configure>
 
