@@ -6,9 +6,7 @@ from plone.dexterity.content import Container
 
 
 class Example(Container):
-
-    '''Exemplo de tipo de conteúdo
-    '''
+    """Exemplo de tipo de conteúdo."""
 
     grok.implements(IExample)
 
