@@ -41,6 +41,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'plone.app.dexterity [grok]',
+        'plone.app.referenceablebehavior',
         'setuptools',
     ],
     extras_require={
