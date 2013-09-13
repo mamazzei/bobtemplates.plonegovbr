@@ -82,6 +82,7 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/testing.py',
                 self.project + '/src/brasil/gov/addon/tests',
                 self.project + '/src/brasil/gov/addon/tests/__init__.py',
+                self.project + '/src/brasil/gov/addon/tests/test_content.py',
                 self.project + '/src/brasil/gov/addon/tests/test_setup.py',
                 self.project + '/src/brasil/gov/addon/upgrades',
                 self.project + '/src/brasil/gov/addon/upgrades/__init__.py',
