@@ -19,7 +19,7 @@ class BaseTemplateTest(unittest.TestCase):
         )
 
     def create_template(self):
-        """Run mr.bob to create your template."""
+        '''Run mr.bob to create your template.'''
         options = {
             'dir': os.path.join(os.path.dirname(__file__)),
             'template': self.template,
@@ -32,16 +32,17 @@ class BaseTemplateTest(unittest.TestCase):
 
 
 class AddOnTemplateTest(BaseTemplateTest):
-    """Tests for the `addon` template."""
+
+    '''Tests for the `addon` template.'''
     template = 'addon'
     project = 'brasil.gov.addon'
 
     def test_addon_template(self):
-        """Test the `addon` template.
+        '''Test the `addon` template.
 
         Generate a project from a template, test which files were created
         and run all tests in the generated package.
-        """
+        '''
         result = self.create_template()
         self.assertItemsEqual(
             result.files_created.keys(),
@@ -83,6 +84,7 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/tests',
                 self.project + '/src/brasil/gov/addon/tests/__init__.py',
                 self.project + '/src/brasil/gov/addon/tests/test_browserlayer.py',
+                self.project + '/src/brasil/gov/addon/tests/test_content.py',
                 self.project + '/src/brasil/gov/addon/tests/test_setup.py',
                 self.project + '/src/brasil/gov/addon/upgrades',
                 self.project + '/src/brasil/gov/addon/upgrades/__init__.py',

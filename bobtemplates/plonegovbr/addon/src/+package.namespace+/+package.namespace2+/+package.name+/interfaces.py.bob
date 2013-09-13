@@ -17,6 +17,7 @@ class IBrowserLayer(Interface):
 
 
 class IExample(form.Schema):
+
     '''Exemplo de schema para um tipo de conteúdo
     '''
 
