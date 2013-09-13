@@ -16,6 +16,7 @@ recipe = plone.recipe.codeanalysis
 directory = ${buildout:directory}/src/{{{ package.namespace }}}/{{{ package.namespace2 }}}/{{{ package.name }}}
 pre-commit-hook = True
 flake8-ignore = E501
+return-status-codes = True
 
 [i18ndude]
 recipe = zc.recipe.egg
