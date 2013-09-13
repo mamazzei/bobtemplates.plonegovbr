@@ -82,5 +82,14 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/tests',
                 self.project + '/src/brasil/gov/addon/tests/__init__.py',
                 self.project + '/src/brasil/gov/addon/tests/test_setup.py',
+                self.project + '/src/brasil/gov/addon/upgrades',
+                self.project + '/src/brasil/gov/addon/upgrades/__init__.py',
+                self.project + '/src/brasil/gov/addon/upgrades/configure.zcml',
+                self.project + '/src/brasil/gov/addon/upgrades/v2000',
+                self.project + '/src/brasil/gov/addon/upgrades/v2000/__init__.py',
+                self.project + '/src/brasil/gov/addon/upgrades/v2000/configure.zcml',
+                self.project + '/src/brasil/gov/addon/upgrades/v2000/handler.py',
+                self.project + '/src/brasil/gov/addon/upgrades/v2000/profile',
+                self.project + '/src/brasil/gov/addon/upgrades/v2000/profile/metadata.xml',
             ]
         )
