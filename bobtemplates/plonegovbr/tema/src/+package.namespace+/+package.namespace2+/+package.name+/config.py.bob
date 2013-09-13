@@ -1,0 +1,16 @@
+# -*- coding:utf-8 -*-
+from Products.CMFPlone import interfaces as plone_interfaces
+from zope.interface import implements
+
+PROJECTNAME = "{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}"
+
+
+class HiddenProfiles(object):
+    implements(plone_interfaces.INonInstallable)
+
+    def getNonInstallableProfiles(self):
+        return [
+            u'{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:uninstall',
+            u'{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.upgrades.v2000:default'
+        ]
+
