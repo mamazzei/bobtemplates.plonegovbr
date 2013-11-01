@@ -7,8 +7,8 @@ grok.templatedir('templates')
 
 
 class HelloWorld (grok.view):
-    ''' Browserview de exemplo Hello World
-    '''
+    """Browserview de exemplo Hello World
+    """
 
     grok.context(IExample)
 
