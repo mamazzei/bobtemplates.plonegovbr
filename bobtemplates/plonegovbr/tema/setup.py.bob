@@ -52,3 +52,4 @@ setup(name='{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.nam
       target = plone
       ''',
       )
+
