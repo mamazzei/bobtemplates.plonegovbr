@@ -5,3 +5,4 @@
     <dependency>profile-plone.app.theming:default</dependency>
   </dependencies>
 </metadata>
+

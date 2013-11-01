@@ -4,21 +4,21 @@
     xmlns:plone="http://namespaces.plone.org/plone"    
     i18n_domain="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}">
 
-    <includeDependencies package="." />
+  <includeDependencies package="." />
+  <include package="five.grok" />
 
-    <!-- Inclui pacote browser -->
-    <include package=".browser" />
+  <!-- Inclui pacote browser -->
+  <include package=".browser" />
 
-    <!-- Suporte ao Generic Setup-->
-    <include file="profiles.zcml" />
+  <!-- Suporte ao Generic Setup-->
+  <include file="profiles.zcml" />
 
-    <!-- Adiciona temas -->
-    <plone:static
-        directory="themes/{{{ tema.id }}}"
-        type="theme"
-        name="{{{ tema.id }}}"/>
-
-    <include package="five.grok" />
+  <!-- Adiciona temas -->
+  <plone:static
+      directory="themes/{{{ tema.id }}}"
+      type="theme"
+      name="{{{ tema.id }}}"
+      />
 
 </configure>
 

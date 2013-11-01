@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <theme>
- <name>{{{ tema.id }}}</name>
- <enabled>false</enabled>
+  <name>{{{ tema.id }}}</name>
+  <enabled>false</enabled>
 </theme>
+

@@ -5,9 +5,9 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}">
 
-    <five:registerPackage package="." />
+  <five:registerPackage package="." />
 
-    <grok:grok package="." />
+  <grok:grok package="." />
 
 </configure>
 

@@ -3,7 +3,8 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}">
 
-    <!-- Viewlets -->
-    <include package=".viewlets" />
+  <!-- Viewlets -->
+  <include package=".viewlets" />
 
 </configure>
+

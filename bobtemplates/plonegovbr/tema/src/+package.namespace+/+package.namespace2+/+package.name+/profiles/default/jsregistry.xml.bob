@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts">
- <javascript
-    id="++theme++{{{ tema.id }}}/js/menu.js"
-    expression=""
-    authenticated="False"
-    />
+  <javascript
+      id="++theme++{{{ tema.id }}}/js/menu.js"
+      expression=""
+      authenticated="False"
+      />
 
 </object>
 
