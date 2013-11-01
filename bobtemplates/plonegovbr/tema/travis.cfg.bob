@@ -16,3 +16,4 @@ allow-hosts +=
 
 [code-analysis]
 directory = ${buildout:directory}/src/{{{ package.namespace }}}/{{{ package.namespace2 }}}/{{{ package.name }}}
+

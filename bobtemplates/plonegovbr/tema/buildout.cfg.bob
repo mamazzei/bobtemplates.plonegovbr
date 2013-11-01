@@ -25,3 +25,4 @@ eggs = i18ndude
 [omelette]
 recipe = collective.recipe.omelette
 eggs = ${test:eggs}
+
