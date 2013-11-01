@@ -1,5 +1,11 @@
 Introdução
-============
+==========
+
+.. image:: https://secure.travis-ci.org/plonegovbr/bobtemplates.plonegovbr.png?branch=master
+    :target: http://travis-ci.org/plonegovbr/bobtemplates.plonegovbr
+
+Uso
+===
 
 Após a instalação do mr.bob: ::
 
