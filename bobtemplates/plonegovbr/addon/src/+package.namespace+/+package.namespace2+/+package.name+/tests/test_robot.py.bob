@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import ROBOT_TESTING
 from plone.testing import layered

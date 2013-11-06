@@ -1,15 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.config import PROJECTNAME
+from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces import IBrowserLayer
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import FUNCTIONAL_TESTING
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import INTEGRATION_TESTING
-from plone.app.testing import login
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import TEST_USER_NAME
+from plone.browserlayer.utils import registered_layers
 from plone.testing.z2 import Browser
 from Products.GenericSetup.upgrade import listUpgradeSteps
-from zope.site.hooks import setSite
 
 import unittest2 as unittest
 
@@ -26,18 +23,11 @@ class BaseTestCase(unittest.TestCase):
 
     profile = '{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:default'
 
-    def setUpUser(self):
-        setRoles(self.portal, TEST_USER_ID, ['Manager', 'Editor', 'Reviewer'])
-        login(self.portal, TEST_USER_NAME)
-
     def setUp(self):
-        portal = self.layer['portal']
-        setSite(portal)
-        self.portal = portal
-        self.qi = getattr(self.portal, 'portal_quickinstaller')
-        self.wt = getattr(self.portal, 'portal_workflow')
-        self.st = getattr(self.portal, 'portal_setup')
-        self.setUpUser()
+        self.portal = self.layer['portal']
+        self.qi = self.portal['portal_quickinstaller']
+        self.wt = self.portal['portal_workflow']
+        self.st = self.portal['portal_setup']
 
 
 class TestInstall(BaseTestCase):
@@ -47,8 +37,11 @@ class TestInstall(BaseTestCase):
         self.assertTrue(self.qi.isProductInstalled(PROJECTNAME),
                         '%s not installed' % PROJECTNAME)
 
+    def test_browser_layer_installed(self):
+        self.assertIn(IBrowserLayer, registered_layers())
+
     def test_version(self):
-        self.assertEquals(
+        self.assertEqual(
             self.st.getLastVersionForProfile(self.profile),
             (u'1000',)
         )
@@ -78,7 +71,7 @@ class TestUpgrade(BaseTestCase):
         step = [step for step in upgradeSteps
                 if (step[0]['dest'] == ('2000',))
                 and (step[0]['source'] == ('1000',))]
-        self.assertEquals(len(step), 1)
+        self.assertEqual(len(step), 1)
 
 
 class TestUninstall(BaseTestCase):
@@ -90,4 +83,8 @@ class TestUninstall(BaseTestCase):
 
     def test_uninstalled(self):
         self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))
+
+    def test_browser_layer_removed_uninstalled(self):
+        self.qi.uninstallProducts(products=[PROJECTNAME])
+        self.assertNotIn(IBrowserLayer, registered_layers())
 

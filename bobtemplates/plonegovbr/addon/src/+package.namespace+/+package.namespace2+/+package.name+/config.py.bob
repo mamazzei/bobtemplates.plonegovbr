@@ -1,12 +1,13 @@
-# -*- coding:utf-8 -*-
-from Products.CMFPlone import interfaces as plone_interfaces
+# -*- coding: utf-8 -*-
+
+from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implements
 
-PROJECTNAME = "{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}"
+PROJECTNAME = '{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}'
 
 
 class HiddenProfiles(object):
-    implements(plone_interfaces.INonInstallable)
+    implements(INonInstallable)
 
     def getNonInstallableProfiles(self):
         return [

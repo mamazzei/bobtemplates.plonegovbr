@@ -94,7 +94,6 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/testing.py',
                 self.project + '/src/brasil/gov/addon/tests',
                 self.project + '/src/brasil/gov/addon/tests/__init__.py',
-                self.project + '/src/brasil/gov/addon/tests/test_browserlayer.py',
                 self.project + '/src/brasil/gov/addon/tests/test_content.py',
                 self.project + '/src/brasil/gov/addon/tests/test_example.robot',
                 self.project + '/src/brasil/gov/addon/tests/test_robot.py',
