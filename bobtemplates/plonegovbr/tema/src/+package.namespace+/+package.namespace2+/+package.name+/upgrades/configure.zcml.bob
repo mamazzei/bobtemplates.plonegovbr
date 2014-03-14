@@ -4,7 +4,7 @@
     i18n_domain="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}">
 
   <!-- Passos de atualizacao -->
-  <include package=".v2000" />
+  <include package=".v1010" />
 
 </configure>
 

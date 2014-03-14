@@ -11,6 +11,6 @@ class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         return [
             u'{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:uninstall',
-            u'{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.upgrades.v2000:default'
+            u'{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.upgrades.v1010:default'
         ]
 
