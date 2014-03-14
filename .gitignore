@@ -1,8 +1,8 @@
+*.egg-info
+*.pyc
 .installed.cfg
 .python-version
 bin/
-bobtemplates.plonegovbr.egg-info/
+brasil.gov.*/
 develop-eggs/
-*.pyc
 parts/
-brasil.gov.addon/

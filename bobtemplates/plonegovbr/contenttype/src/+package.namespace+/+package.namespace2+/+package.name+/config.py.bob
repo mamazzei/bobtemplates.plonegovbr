@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+
+from Products.CMFPlone.interfaces import INonInstallable
+from zope.interface import implements
+
+PROJECTNAME = '{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}'
+
+
+class HiddenProfiles(object):
+    implements(INonInstallable)
+
+    def getNonInstallableProfiles(self):
+        return [
+            u'{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}:uninstall',
+            u'{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.upgrades.v1010:default'
+        ]
+

@@ -2,6 +2,7 @@ language: python
 python: 2.7
 env:
   - TEMPLATE=addon
+  - TEMPLATE=contenttype
   - TEMPLATE=tema
 install:
   - python bootstrap.py

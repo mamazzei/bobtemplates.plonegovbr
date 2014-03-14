@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}">
+
+  <!-- Profiles -->
+  <genericsetup:registerProfile
+      name="default"
+      title="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}: Instalação do Pacote"
+      directory="profiles/default"
+      description="Instala o pacote {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} dentro de um portal Plone"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title; description"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}: Remoção do Pacote"
+      directory="profiles/uninstall"
+      description="Remove o pacote {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} de dentro de um portal Plone"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title; description"
+      />
+
+  <!-- Upgrades -->
+  <include package=".upgrades" />
+
+  <!-- Oculta profile -->
+  <utility
+      factory=".config.HiddenProfiles"
+      name="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}"
+      />
+
+</configure>
+

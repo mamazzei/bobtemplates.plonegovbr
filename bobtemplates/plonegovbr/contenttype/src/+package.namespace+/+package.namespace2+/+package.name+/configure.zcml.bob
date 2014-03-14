@@ -14,5 +14,13 @@
   <!-- Suporte ao Generic Setup-->
   <include file="profiles.zcml" />
 
+  <include package=".browser" />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}"
+      directory="static"
+      />
+
 </configure>
 
