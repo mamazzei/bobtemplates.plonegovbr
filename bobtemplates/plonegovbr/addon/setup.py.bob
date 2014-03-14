@@ -32,17 +32,14 @@ setup(
     author='FIXME',
     author_email='FIXME',
     url='https://github.com/plonegovbr/{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}',
-    license='GPLv2',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     namespace_packages=['{{{ package.namespace }}}', '{{{ package.namespace }}}.{{{ package.namespace2 }}}'],
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'plone.app.dexterity [grok]',
-        'plone.app.referenceablebehavior',
-        'plone.dexterity',
-        'plone.directives.form',
+        'plone.app.upgrade',
+        'Products.CMFPlone >=4.3',
         'Products.GenericSetup',
         'setuptools',
         'zope.i18nmessageid',
@@ -54,13 +51,12 @@ setup(
             'plone.app.testing [robot] >=4.2.2',
             'plone.browserlayer',
             'plone.testing',
-            'unittest2',
-            'zope.component',
+            'robotsuite',
         ],
     },
-    entry_points='''
+    entry_points="""
       [z3c.autoinclude.plugin]
       target = plone
-      ''',
+      """,
 )
 
