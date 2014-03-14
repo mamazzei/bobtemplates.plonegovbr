@@ -29,7 +29,7 @@ bin/sphinx-build: .installed.cfg
 	bin/buildout $(options)
 
 bin/buildout: bin/python buildout.cfg bootstrap.py
-	bin/python bootstrap.py -d
+	bin/python bootstrap.py -v 1.7.1
 	@touch $@
 
 bin/python:
