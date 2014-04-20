@@ -6,7 +6,7 @@ from five import grok
 grok.templatedir('templates')
 
 
-class HelloWorld (grok.view):
+class HelloWorld (grok.View):
     """Browserview de exemplo Hello World
     """
 
