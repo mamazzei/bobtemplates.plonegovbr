@@ -35,11 +35,6 @@ class ContentTypeTestCase(unittest.TestCase):
         fti = queryUtility(IDexterityFTI, name='Example')
         self.assertIsNotNone(fti)
 
-    def test_schema(self):
-        fti = queryUtility(IDexterityFTI, name='Example')
-        schema = fti.lookupSchema()
-        self.assertEqual(IExample, schema)
-
     def test_factory(self):
         fti = queryUtility(IDexterityFTI, name='Example')
         factory = fti.factory

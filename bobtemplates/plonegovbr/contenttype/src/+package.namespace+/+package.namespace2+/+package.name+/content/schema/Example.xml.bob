@@ -1,0 +1,14 @@
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+       xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}">
+  <schema>
+    <field name="text" type="plone.app.textfield.RichText" indexer:searchable="true">
+      <description />
+      <required>False</required>
+      <title i18n:translate="">Texto Rico</title>
+    </field> 
+  </schema>
+</model>

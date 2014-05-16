@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} import _
-from plone.app.textfield import RichText
-from plone.directives import form
 from zope.interface import Interface
 
 
@@ -16,11 +14,5 @@ class IBrowserLayer(Interface):
     """
 
 
-class IExample(form.Schema):
-    """Exemplo de schema para um tipo de conteúdo."""
-
-    text = RichText(
-        title=_(u'Body text'),
-        required=False,
-    )
-
+class IExample(Interface):
+    """Interface de tipo de conteúdo."""
