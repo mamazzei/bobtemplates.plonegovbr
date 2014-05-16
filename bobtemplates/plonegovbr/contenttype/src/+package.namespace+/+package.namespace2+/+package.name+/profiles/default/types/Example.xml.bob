@@ -15,8 +15,8 @@
   <!-- schema interface and class used for content items -->
   <property name="schema"></property>
   <property name="klass">{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.content.example.Example</property>
-  <property name="model_file"></property>
-  <property name="model_source">{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.content.schema:Example.xml</property>
+  <property name="model_source"></property>
+  <property name="model_file">{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.content.schema:Example.xml</property>
 
   <!-- add permission -->
   <property name="add_permission">{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.AddExample</property>
