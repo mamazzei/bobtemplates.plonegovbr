@@ -9,6 +9,6 @@
       <description />
       <required>False</required>
       <title i18n:translate="">Texto Rico</title>
-    </field> 
+    </field>
   </schema>
 </model>
