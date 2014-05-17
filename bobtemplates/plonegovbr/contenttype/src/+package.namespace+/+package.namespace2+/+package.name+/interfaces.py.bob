@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} import _
 from zope.interface import Interface
 
 
