@@ -9,7 +9,7 @@ Uso
 
 Após a instalação do mr.bob: ::
 
-    $ pip install mr.bob==0.1a9
+    $ pip install mr.bob==0.1.1
 
 Podemos executar o comando: ::
 
