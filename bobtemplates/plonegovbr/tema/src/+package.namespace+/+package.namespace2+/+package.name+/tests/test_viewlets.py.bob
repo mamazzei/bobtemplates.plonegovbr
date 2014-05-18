@@ -6,6 +6,7 @@ from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from zope.component import getMultiAdapter
 from zope.interface import alsoProvides
+from zope.interface import noLongerProvides
 from Products.Five.browser import BrowserView as View
 from plone.app.layout.viewlets.interfaces import IAboveContent
 
@@ -38,6 +39,7 @@ class PathBarViewletTestCase(unittest.TestCase):
         self.assertIn('<!-- Exemplo de customizacao -->', html)
 
     def test_not_available(self):
+        noLongerProvides(self.portal.REQUEST, IBrowserLayer)
         manager = self.manager()
         viewlets = [v for v in manager.viewlets if v.__name__ == 'plone.path_bar']
         viewlet = viewlets[0] if viewlets else None
