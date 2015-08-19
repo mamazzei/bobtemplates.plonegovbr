@@ -196,6 +196,7 @@ class TemaTemplateTest(BaseTemplateTest):
             result.files_created.keys(),
             [
                 self.project,
+                self.project + '/.csslintrc',
                 self.project + '/.travis.yml',
                 self.project + '/bootstrap.py',
                 self.project + '/buildout.cfg',
