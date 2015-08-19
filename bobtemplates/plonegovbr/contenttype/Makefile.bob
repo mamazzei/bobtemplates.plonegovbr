@@ -2,7 +2,7 @@
 # use `make options=-v` to run buildout with extra options
 
 python = python2.7
-options = -c travis.cfg
+options =
 
 all: docs tests
 

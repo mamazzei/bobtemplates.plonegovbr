@@ -7,6 +7,7 @@ package-name = {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.
 package-extras = [test]
 
 parts +=
+    createcoverage
     code-analysis
     i18ndude
     omelette
@@ -14,14 +15,16 @@ parts +=
 [code-analysis]
 recipe = plone.recipe.codeanalysis
 directory = ${buildout:directory}/src/{{{ package.namespace }}}/{{{ package.namespace2 }}}/{{{ package.name }}}
-pre-commit-hook = True
-flake8-ignore = E501
 clean-lines = True
 deprecated-aliases = True
-imports = True
-prefer-single-quotes = True
+flake8-extensions =
+    flake8-blind-except
+    flake8-coding
+    flake8-debugger
+#    flake8-quotes
+flake8-ignore = E501
+multiprocessing = True
 return-status-codes = True
-utf8-header = True
 
 [i18ndude]
 recipe = zc.recipe.egg

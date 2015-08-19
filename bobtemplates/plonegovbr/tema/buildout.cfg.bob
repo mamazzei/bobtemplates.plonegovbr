@@ -8,14 +8,27 @@ package-extras = [test]
 
 parts +=
     code-analysis
+    createcoverage
     i18ndude
+    node
     omelette
 
 [code-analysis]
 recipe = plone.recipe.codeanalysis
 directory = ${buildout:directory}/src/{{{ package.namespace }}}/{{{ package.namespace2 }}}/{{{ package.name }}}
-pre-commit-hook = True
+clean-lines = True
+csslint = True
+csslint-bin = ${buildout:directory}/bin/csslint
+deprecated-aliases = True
+flake8-extensions =
+    flake8-blind-except
+    flake8-coding
+    flake8-debugger
+#    flake8-quotes
 flake8-ignore = E501
+jshint = True
+jshint-bin = bin/jshint
+multiprocessing = True
 return-status-codes = True
 
 [i18ndude]

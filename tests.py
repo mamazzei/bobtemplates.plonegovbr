@@ -91,7 +91,6 @@ class AddOnTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/addon/upgrades/v1010/handler.py',
                 self.project + '/src/brasil/gov/addon/upgrades/v1010/profile',
                 self.project + '/src/brasil/gov/addon/upgrades/v1010/profile/metadata.xml',
-                self.project + '/travis.cfg',
                 self.project,
             ]
         )
@@ -176,7 +175,6 @@ class ContentTypeTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/contenttype/upgrades/v1010/handler.py',
                 self.project + '/src/brasil/gov/contenttype/upgrades/v1010/profile',
                 self.project + '/src/brasil/gov/contenttype/upgrades/v1010/profile/metadata.xml',
-                self.project + '/travis.cfg',
                 self.project,
             ]
         )
@@ -334,6 +332,5 @@ class TemaTemplateTest(BaseTemplateTest):
                 self.project + '/src/brasil/gov/tema/upgrades/v1010/handler.py',
                 self.project + '/src/brasil/gov/tema/upgrades/v1010/profile',
                 self.project + '/src/brasil/gov/tema/upgrades/v1010/profile/metadata.xml',
-                self.project + '/travis.cfg',
             ]
         )
