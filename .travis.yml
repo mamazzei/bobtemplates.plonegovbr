@@ -1,5 +1,12 @@
 language: python
 python: 2.7
+sudo: false
+cache:
+  directories:
+  - eggs
+  - brasil.gov.addon/eggs
+  - brasil.gov.contenttype/eggs
+  - brasil.gov.tema/eggs
 env:
   - TEMPLATE=addon
   - TEMPLATE=contenttype
