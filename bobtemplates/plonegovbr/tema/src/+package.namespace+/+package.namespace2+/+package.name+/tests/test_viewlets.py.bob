@@ -10,7 +10,7 @@ from zope.interface import noLongerProvides
 from Products.Five.browser import BrowserView as View
 from plone.app.layout.viewlets.interfaces import IAboveContent
 
-import unittest2 as unittest
+import unittest
 
 
 class PathBarViewletTestCase(unittest.TestCase):

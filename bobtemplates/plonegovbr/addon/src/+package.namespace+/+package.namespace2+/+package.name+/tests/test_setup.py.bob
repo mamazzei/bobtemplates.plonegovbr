@@ -7,7 +7,7 @@ from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.t
 from plone.browserlayer.utils import registered_layers
 from Products.GenericSetup.upgrade import listUpgradeSteps
 
-import unittest2 as unittest
+import unittest
 
 
 class Plone43TestCase(unittest.TestCase):

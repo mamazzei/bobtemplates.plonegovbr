@@ -54,7 +54,6 @@ setup(
             'plone.app.testing [robot] >=4.2.2',
             'plone.browserlayer',
             'plone.testing',
-            'unittest2',
             'zope.component',
         ],
     },
