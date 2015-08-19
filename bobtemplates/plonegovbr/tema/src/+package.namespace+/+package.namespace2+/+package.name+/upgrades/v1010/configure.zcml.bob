@@ -8,12 +8,12 @@
   <!-- Profile -->
   <genericsetup:registerProfile
       name="default"
-	  title="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}: Versao 1010"
-	  directory="profile"
-	  description="Atualiza o pacote {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} para versao 1010"
-	  provides="Products.GenericSetup.interfaces.EXTENSION"
-	  i18n:attributes="title; description"
-	  />
+      title="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}: Versao 1010"
+      directory="profile"
+      description="Atualiza o pacote {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} para versao 1010"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title; description"
+      />
 
   <!-- Upgrade -->
   <genericsetup:upgradeSteps

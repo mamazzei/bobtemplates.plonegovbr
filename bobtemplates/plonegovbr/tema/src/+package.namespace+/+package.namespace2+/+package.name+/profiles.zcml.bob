@@ -8,21 +8,21 @@
   <!-- Profiles -->
   <genericsetup:registerProfile
       name="default"
-	  title="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}: Instalação do Tema"
-	  directory="profiles/default"
-	  description="Instala o pacote {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} dentro de um portal Plone"
-	  provides="Products.GenericSetup.interfaces.EXTENSION"
-	  i18n:attributes="title; description"
-	  />
+      title="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}: Instalação do Tema"
+      directory="profiles/default"
+      description="Instala o pacote {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} dentro de um portal Plone"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title; description"
+      />
 
   <genericsetup:registerProfile
-	  name="uninstall"
-	  title="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}: Remoção do Tema"
-	  directory="profiles/uninstall"
-	  description="Remove o pacote {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} de dentro de um portal Plone"
-	  provides="Products.GenericSetup.interfaces.EXTENSION"
-	  i18n:attributes="title; description"
-	  />
+      name="uninstall"
+      title="{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}: Remoção do Tema"
+      directory="profiles/uninstall"
+      description="Remove o pacote {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}} de dentro de um portal Plone"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title; description"
+      />
 
   <!-- Upgrades -->
   <include package=".upgrades" />
