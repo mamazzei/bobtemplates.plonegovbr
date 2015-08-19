@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.config import PROJECTNAME
+from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces import IBrowserLayer
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import INTEGRATION_TESTING
 from plone.app.testing import login
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
+from plone.browserlayer.utils import registered_layers
 from Products.GenericSetup.upgrade import listUpgradeSteps
 from zope.site.hooks import setSite
 
@@ -39,6 +41,9 @@ class TestInstall(BaseTestCase):
         self.assertTrue(self.qi.isProductInstalled(PROJECTNAME),
                         '%s not installed' % PROJECTNAME)
 
+    def test_browser_layer_installed(self):
+        self.assertIn(IBrowserLayer, registered_layers())
+
     def test_version(self):
         self.assertEquals(
             self.st.getLastVersionForProfile(self.profile),
@@ -69,4 +74,7 @@ class TestUninstall(BaseTestCase):
 
     def test_uninstalled(self):
         self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))
+
+    def test_browser_layer_removed(self):
+        self.assertNotIn(IBrowserLayer, registered_layers())
 
