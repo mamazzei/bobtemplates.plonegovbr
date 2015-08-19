@@ -1,11 +1,11 @@
 *** Settings ***
 
-Library  Selenium2Library  timeout=10 seconds  implicit_wait=5 seconds
 Resource  plone/app/robotframework/keywords.robot
 Variables  plone/app/testing/interfaces.py
+Library  Remote  ${PLONE_URL}/RobotRemote
 
-Test Setup  Open test browser
-Test Teardown  Close all browsers
+Suite Setup  Open Test Browser
+Suite Teardown  Close all browsers
 
 *** Variables ***
 
@@ -15,8 +15,8 @@ ${description_selector} =  textarea#form-widgets-IDublinCore-description
 *** Test cases ***
 
 Test CRUD
-    Log in as site owner
-    Go to homepage
+    Enable Autologin as  Site Administrator
+    Go to Homepage
 
     Create  Título  Descrição
     Update  Título  Descrição
