@@ -45,7 +45,7 @@ class TestInstall(BaseTestCase):
         self.assertIn(IBrowserLayer, registered_layers())
 
     def test_version(self):
-        self.assertEquals(
+        self.assertEqual(
             self.st.getLastVersionForProfile(self.profile),
             (u'1000',)
         )
@@ -62,7 +62,7 @@ class TestUpgrade(BaseTestCase):
         step = [step for step in upgradeSteps
                 if (step[0]['dest'] == ('1010',))
                 and (step[0]['source'] == ('1000',))]
-        self.assertEquals(len(step), 1)
+        self.assertEqual(len(step), 1)
 
 
 class TestUninstall(BaseTestCase):
