@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces import IExample
-from five import grok
 from plone.dexterity.content import Container
+from zope.interface import implements
 
 
 class Example(Container):
-    """Exemplo de tipo de conteúdo."""
 
-    grok.implements(IExample)
+    """Tipo de conteúdo Example."""
+
+    implements(IExample)
 

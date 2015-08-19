@@ -1,14 +1,7 @@
 # -*- coding: utf-8 -*-
-
-from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.interfaces import IExample
-from five import grok
-
-grok.templatedir('templates')
+from Products.Five.browser import BrowserView
 
 
-class HelloWorld (grok.View):
-    """Browserview de exemplo Hello World
-    """
-
-    grok.context(IExample)
+class View(BrowserView):
+    """Default view for Example type."""
 

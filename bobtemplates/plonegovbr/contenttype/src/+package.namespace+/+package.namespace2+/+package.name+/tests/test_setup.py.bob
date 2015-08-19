@@ -5,7 +5,6 @@ from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.i
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import FUNCTIONAL_TESTING
 from {{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}.testing import INTEGRATION_TESTING
 from plone.browserlayer.utils import registered_layers
-from plone.testing.z2 import Browser
 from Products.GenericSetup.upgrade import listUpgradeSteps
 
 import unittest
@@ -45,19 +44,6 @@ class TestInstall(BaseTestCase):
             self.st.getLastVersionForProfile(self.profile),
             (u'1000',)
         )
-
-    def test_static_resource_grokker(self):
-        """Grok does not register automatically the static resources anymore
-        see: http://svn.zope.org/five.grok/trunk/src/five/grok/meta.py?rev=123298&r1=112163&r2=123298
-        """
-        portal = self.layer['portal']
-        app = self.layer['app']
-
-        browser = Browser(app)
-        portal_url = portal.absolute_url()
-
-        browser.open('%s/++resource++{{{ package.namespace }}}.{{{ package.namespace2 }}}.{{{ package.name }}}' % portal_url)
-        self.assertEqual(browser.headers['status'], '200 Ok')
 
 
 class TestUpgrade(BaseTestCase):
